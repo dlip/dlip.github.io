@@ -1,0 +1,1633 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        Hybrid Keyboard Chording With ZMK ::
+        dlip — A simple theme for Hugo
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="Chording is the act of inputting text by pressing multiple keys at once, rather than typing sequentially as you normally would. There are chording approaches such as Stenography which court reporters often use in a similar way to shorthand to be able to input any word at the speed of speech, comfortably all day long.
+This is impressive, but also takes years of practice to become proficient. The hybrid approach uses the regular sequential typing method, but with the ability to chord words using abbreviations that we define at any point in the sentence."
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/posts/hybrid-keyboard-chording-with-zmk/" />
+
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css" />
+
+<link rel="stylesheet" href="/style.css" />
+
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="/img/favicon.png" />
+
+
+<link href="/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hybrid Keyboard Chording With ZMK"/>
+<meta name="twitter:description" content="Chording is the act of inputting text by pressing multiple keys at once, rather than typing sequentially as you normally would. There are chording approaches such as Stenography which court reporters often use in a similar way to shorthand to be able to input any word at the speed of speech, comfortably all day long.
+This is impressive, but also takes years of practice to become proficient. The hybrid approach uses the regular sequential typing method, but with the ability to chord words using abbreviations that we define at any point in the sentence."/>
+
+
+
+<meta property="og:title" content="Hybrid Keyboard Chording With ZMK" />
+<meta property="og:description" content="Chording is the act of inputting text by pressing multiple keys at once, rather than typing sequentially as you normally would. There are chording approaches such as Stenography which court reporters often use in a similar way to shorthand to be able to input any word at the speed of speech, comfortably all day long.
+This is impressive, but also takes years of practice to become proficient. The hybrid approach uses the regular sequential typing method, but with the ability to chord words using abbreviations that we define at any point in the sentence." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/hybrid-keyboard-chording-with-zmk/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-04-25T14:54:26+10:00" />
+<meta property="article:modified_time" content="2022-04-25T14:54:26+10:00" /><meta property="og:site_name" content="dlip" />
+
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >dlip</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">Hybrid Keyboard Chording With ZMK</h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2022-04-25
+        </span>
+
+        
+          
+        
+      
+
+      
+
+
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      
+      <p>Chording is the act of inputting text by pressing multiple keys at once, rather than typing sequentially as you normally would. There are chording approaches such as <a href="http://www.openstenoproject.org/">Stenography</a> which court reporters often use in a similar way to shorthand to be able to input any word at the speed of speech, comfortably all day long.</p>
+<p>This is impressive, but also takes years of practice to become proficient. The hybrid approach uses the regular sequential typing method, but with the ability to chord words using abbreviations that we define at any point in the sentence. The goal is not to be able to chord every word, but by focusing on the most common 200-300 words we can cover 65%+ of the English language.</p>
+<p><a href="https://zmk.dev/">ZMK</a> is an open source firmware which can run on many bluetooth mechanical keyboards. It has many features, including <a href="https://zmk.dev/docs/features/combos">combos</a> which we can use for chording, and <a href="https://zmk.dev/docs/behaviors/macros">macros</a> which allow you to define the keys to be pressed when you press the combo.</p>
+<h2 id="creating-chords">
+  Creating Chords
+  <a href="#creating-chords" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>I started by searching for a common word list, this page containing <a href="https://www.smart-words.org/500-most-commonly-used-english-words.html">The 500 most commonly used words</a> seemed like a good starting point. I saved the list to a file:</p>
+<p><code>words.txt</code></p>
+<pre tabindex="0"><code>the
+of
+to
+and
+a
+in
+is
+it
+you
+that
+he
+was
+for
+on
+are
+with
+as
+I
+his
+they
+be
+at
+one
+have
+this
+from
+or
+had
+by
+hot
+but
+some
+what
+there
+we
+can
+out
+other
+were
+all
+your
+when
+up
+use
+word
+how
+said
+an
+each
+she
+which
+do
+their
+time
+if
+will
+way
+about
+many
+then
+them
+would
+write
+like
+so
+these
+her
+long
+make
+thing
+see
+him
+two
+has
+look
+more
+day
+could
+go
+come
+did
+my
+sound
+no
+most
+number
+who
+over
+know
+water
+than
+call
+first
+people
+may
+down
+side
+been
+now
+find
+any
+new
+work
+part
+take
+get
+place
+made
+live
+where
+after
+back
+little
+only
+round
+man
+year
+came
+show
+every
+good
+me
+give
+our
+under
+name
+very
+through
+just
+form
+much
+great
+think
+say
+help
+low
+line
+before
+turn
+cause
+same
+mean
+differ
+move
+right
+boy
+old
+too
+does
+tell
+sentence
+set
+three
+want
+air
+well
+also
+play
+small
+end
+put
+home
+read
+hand
+port
+large
+spell
+add
+even
+land
+here
+must
+big
+high
+such
+follow
+act
+why
+ask
+men
+change
+went
+light
+kind
+off
+need
+house
+picture
+try
+us
+again
+animal
+point
+mother
+world
+near
+build
+self
+earth
+father
+head
+stand
+own
+page
+should
+country
+found
+answer
+school
+grow
+study
+still
+learn
+plant
+cover
+food
+sun
+four
+thought
+let
+keep
+eye
+never
+last
+door
+between
+city
+tree
+cross
+since
+hard
+start
+might
+story
+saw
+far
+sea
+draw
+left
+late
+run
+don't
+while
+press
+close
+night
+real
+life
+few
+stop
+open
+seem
+together
+next
+white
+children
+begin
+got
+walk
+example
+ease
+paper
+often
+always
+music
+those
+both
+mark
+book
+letter
+until
+mile
+river
+car
+feet
+care
+second
+group
+carry
+took
+rain
+eat
+room
+friend
+began
+idea
+fish
+mountain
+north
+once
+base
+hear
+horse
+cut
+sure
+watch
+color
+face
+wood
+main
+enough
+plain
+girl
+usual
+young
+ready
+above
+ever
+red
+list
+though
+feel
+talk
+bird
+soon
+body
+dog
+family
+direct
+pose
+leave
+song
+measure
+state
+product
+black
+short
+numeral
+class
+wind
+question
+happen
+complete
+ship
+area
+half
+rock
+order
+fire
+south
+problem
+piece
+told
+knew
+pass
+farm
+top
+whole
+king
+size
+heard
+best
+hour
+better
+TRUE
+during
+hundred
+am
+remember
+step
+early
+hold
+west
+ground
+interest
+reach
+fast
+five
+sing
+listen
+six
+table
+travel
+less
+morning
+ten
+simple
+several
+vowel
+toward
+war
+lay
+against
+pattern
+slow
+center
+love
+person
+money
+serve
+appear
+road
+map
+science
+rule
+govern
+pull
+cold
+notice
+voice
+fall
+power
+town
+fine
+certain
+fly
+unit
+lead
+cry
+dark
+machine
+note
+wait
+plan
+figure
+star
+box
+noun
+field
+rest
+correct
+able
+pound
+done
+beauty
+drive
+stood
+contain
+front
+teach
+week
+final
+gave
+green
+oh
+quick
+develop
+sleep
+warm
+free
+minute
+strong
+special
+mind
+behind
+clear
+tail
+produce
+fact
+street
+inch
+lot
+nothing
+course
+stay
+wheel
+full
+force
+blue
+object
+decide
+surface
+deep
+moon
+island
+foot
+yet
+busy
+test
+record
+boat
+common
+gold
+possible
+plane
+age
+dry
+wonder
+laugh
+thousand
+ago
+ran
+check
+game
+shape
+yes
+hot
+miss
+brought
+heat
+snow
+bed
+bring
+sit
+perhaps
+fill
+east
+weight
+language
+among
+</code></pre><p>I wrote a nodejs script to generate unique chords for each word. I also decided to exclude words 2 characters or shorter in length so I could make it more worthwhile to chord compared to number of key you would need to press. The code isn&rsquo;t the cleanest, but it&rsquo;s really only a one use script anyway:</p>
+<p><code>filter.js</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">events</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;events&#39;</span>);
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fs</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;fs&#39;</span>);
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">readline</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;readline&#39;</span>);
+
+(<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">processLineByLine</span>() {
+  <span style="color:#66d9ef">try</span> {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">rl</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">readline</span>.<span style="color:#a6e22e">createInterface</span>({
+      <span style="color:#a6e22e">input</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">createReadStream</span>(<span style="color:#e6db74">&#39;words.txt&#39;</span>),
+      <span style="color:#a6e22e">crlfDelay</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">Infinity</span>
+    });
+
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">used</span> <span style="color:#f92672">=</span> {};
+    <span style="color:#a6e22e">rl</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;line&#39;</span>, (<span style="color:#a6e22e">line</span>) =&gt; {
+      <span style="color:#66d9ef">let</span> [<span style="color:#a6e22e">word</span>, <span style="color:#a6e22e">keys</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">line</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#39; &#39;</span>);
+
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">word</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">3</span>) {
+        <span style="color:#66d9ef">return</span>;
+      }
+      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">combo</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
+      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">index</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
+      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">keys</span>) {
+        <span style="color:#a6e22e">keys</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">word</span>;
+        <span style="color:#75715e">//first letters strategy
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">cs</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">keys</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#39;&#39;</span>);
+        
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">x</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">cs</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">x</span><span style="color:#f92672">++</span>) {
+          <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">combo</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#39;&#39;</span>).<span style="color:#a6e22e">includes</span>(<span style="color:#a6e22e">cs</span>[<span style="color:#a6e22e">x</span>])) {
+            <span style="color:#66d9ef">continue</span>;
+          }
+          <span style="color:#a6e22e">combo</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">cs</span>[<span style="color:#a6e22e">x</span>];
+          <span style="color:#75715e">// need to sort combo to ensure no dupes with different order
+</span><span style="color:#75715e"></span>          <span style="color:#a6e22e">index</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">combo</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#39;&#39;</span>).<span style="color:#a6e22e">sort</span>().<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39;&#39;</span>);
+
+          <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">used</span>[<span style="color:#a6e22e">index</span>]) {
+            <span style="color:#66d9ef">break</span>;
+          }
+        }
+
+
+        <span style="color:#75715e">// consonants strategy
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">combo</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2</span>) {
+          <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">ccombo</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
+          <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">ccs</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">keys</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/[aeiou]/g</span>, <span style="color:#e6db74">&#39;&#39;</span>).<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#39;&#39;</span>);
+          <span style="color:#75715e">//ensure first char is not stripped if vowel
+</span><span style="color:#75715e"></span>          <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">keys</span>.<span style="color:#a6e22e">charAt</span>(<span style="color:#ae81ff">0</span>) <span style="color:#f92672">!==</span> <span style="color:#a6e22e">ccs</span>[<span style="color:#ae81ff">0</span>]) {
+            <span style="color:#a6e22e">ccs</span> <span style="color:#f92672">=</span> [ <span style="color:#a6e22e">keys</span>.<span style="color:#a6e22e">charAt</span>(<span style="color:#ae81ff">0</span>), ...<span style="color:#a6e22e">ccs</span>];
+          }
+
+          <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">x</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">ccs</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">x</span><span style="color:#f92672">++</span>) {
+            <span style="color:#75715e">// ignore letters occuring multiple letters
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">ccombo</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#39;&#39;</span>).<span style="color:#a6e22e">includes</span>(<span style="color:#a6e22e">ccs</span>[<span style="color:#a6e22e">x</span>])) {
+              <span style="color:#66d9ef">continue</span>;
+            }
+            <span style="color:#a6e22e">ccombo</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">ccs</span>[<span style="color:#a6e22e">x</span>];
+            <span style="color:#75715e">// need to sort combo to ensure no dupes with different order
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">cindex</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ccombo</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#39;&#39;</span>).<span style="color:#a6e22e">sort</span>().<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39;&#39;</span>);
+
+            <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">used</span>[<span style="color:#a6e22e">cindex</span>] <span style="color:#f92672">&amp;&amp;</span> (<span style="color:#a6e22e">cindex</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">index</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">used</span>[<span style="color:#a6e22e">index</span>])) {
+              <span style="color:#a6e22e">index</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">cindex</span>;
+              <span style="color:#a6e22e">combo</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ccombo</span>;
+              <span style="color:#66d9ef">break</span>;
+            }
+          }
+        }
+      } <span style="color:#66d9ef">else</span> {
+        <span style="color:#a6e22e">index</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">keys</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#39;&#39;</span>).<span style="color:#a6e22e">sort</span>().<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39;&#39;</span>);
+        <span style="color:#a6e22e">combo</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">keys</span>;
+      }
+
+
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">used</span>[<span style="color:#a6e22e">index</span>]) {
+        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">`Can&#39;t use combo &#39;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">combo</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#39; for word &#39;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">word</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#39; already used by </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">used</span>[<span style="color:#a6e22e">index</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+      }
+      <span style="color:#a6e22e">used</span>[<span style="color:#a6e22e">index</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">word</span>;
+
+      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">word</span>, <span style="color:#a6e22e">combo</span>);
+      });
+
+      <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">events</span>.<span style="color:#a6e22e">once</span>(<span style="color:#a6e22e">rl</span>, <span style="color:#e6db74">&#39;close&#39;</span>);
+
+  } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">err</span>) {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#a6e22e">err</span>);
+  }
+})();
+</code></pre></div><p>The approach that I took was to use the first letters of the word one by one until it found a combination that hasn&rsquo;t been used. This results in the most common &rsquo;t' word &lsquo;the&rsquo; becoming the combo &rsquo;t', &lsquo;that&rsquo; becoming &lsquo;th&rsquo;, and &lsquo;they&rsquo; becoming &lsquo;the&rsquo; etc.</p>
+<p>If the combo is greater than 2 characters, another strategy is used which I called the &lsquo;consonants strategy&rsquo;. This approach removes the vowels, then does a similar check on the first letters. Having multiple strategies results in more short combos.</p>
+<p>Even with these 2 approaches, the script has a few collisions that it will error on which you will need to fix manually. If you edit <code>words.txt</code> and add the preferred combo after the word, the script will use that instead eg. <code>what wt</code> will set &lsquo;what&rsquo; to &lsquo;wt&rsquo;.</p>
+<p>The final issue is that some combos just aren&rsquo;t physically possible to press on a normal keyboard layout. I just went through each word and attepted to press the combos and changed them if they didn&rsquo;t work. I use a <a href="https://colemakmods.github.io/mod-dh/">Colemak-DHm</a> layout, so if you use Qwerty or another layout you will have to try to update these yourself. I have tested the first 300 words in this list.</p>
+<p>I ran the script using the command:</p>
+<pre tabindex="0"><code>node filter.js &gt; chords.txt
+</code></pre><p><code>chords.txt</code></p>
+<pre tabindex="0"><code>the t
+and a
+you y
+that th
+was w
+for f
+are ar
+with wi
+his h
+they the
+one o
+have ha
+this thi
+from fr
+had hd
+hot ho
+but b
+some s
+what wt
+there thr
+can c
+out ou
+other otr
+were we
+all al
+your yo
+when wn
+use u
+word wd
+how hw
+said sa
+each e
+she sh
+which whi
+their thei
+time ti
+will wl
+way wy
+about ab
+many m
+then tn
+them tm
+would wo
+write wr
+like l
+these ths
+her he
+long lg
+make ma
+thing tin
+see se
+him hi
+two two
+has has
+look lo
+more mo
+day d
+could co
+come cm
+did di
+sound so
+most ms
+number n
+who who
+over ov
+know k
+water wte
+than tha
+call ca
+first fi
+people p
+may my
+down do
+side si
+been be
+now no
+find fn
+any an
+new ne
+work wk
+part pa
+take ta
+get g
+place pl
+made md
+live li
+where whe
+after af
+back bk
+little lt
+only onl
+round r
+man mn
+year yr
+came cam
+show sho
+every ev
+good go
+give gi
+our or
+under un
+name nam
+very v
+through thro
+just j
+form fm
+much mu
+great gr
+think tk
+say sy
+help hp
+low low
+line ln
+before bf
+turn tu
+cause cs
+same sam
+mean me
+differ df
+move mv
+right ri
+boy bo
+old old
+too to
+does ds
+tell te
+sentence snt
+set st
+three thre
+want wnt
+air ai
+well wel
+also aso
+play pla
+small sal
+end ed
+put pu
+home hoe
+read re
+hand hn
+port po
+large lr
+spell sp
+add ad
+even evn
+land lan
+here hr
+must mus
+big bi
+high hg
+such su
+follow fw
+act act
+why why
+ask ak
+men men
+change ch
+went wen
+light lgt
+kind ki
+off of
+need nd
+house hse
+picture pi
+try tr
+again ag
+animal ani
+point pn
+mother mtr
+world wrl
+near nr
+build bu
+self sl
+earth ea
+father ft
+head hea
+stand sta
+own own
+page pe
+should shd
+country cn
+found fou
+answer ans
+school sch
+grow gro
+study stu
+still sti
+learn le
+plant pln
+cover cv
+food fod
+sun sn
+four fur
+thought tho
+let let
+keep ke
+eye ey
+never nv
+last lst
+door dr
+between bw
+city ci
+tree tre
+cross cr
+since sin
+hard har
+start str
+might mi
+story sto
+saw sw
+far far
+draw dra
+left lf
+late lat
+run ru
+don't don
+while whie
+press pr
+close cl
+night ni
+real rel
+life lif
+few fe
+stop stp
+open ope
+seem sem
+together tg
+next nx
+white wht
+children chi
+begin bg
+got got
+walk wal
+example ex
+ease eas
+paper pae
+often oft
+always ays
+music msc
+those thos
+both boh
+mark mr
+book bok
+letter ltr
+until unt
+mile mie
+river rv
+car car
+feet fet
+care care
+second sec
+group gru
+carry cay
+took tok
+rain rai
+eat eat
+room rom
+friend fri
+began bgn
+idea i
+fish fh
+mountain mnt
+north nor
+once onc
+base bs
+hear hear
+horse hor
+cut cu
+sure sr
+watch tch
+color col
+face fae
+wood wod
+main mai
+enough eno
+plain pli
+girl gir
+usual usa
+young yn
+ready rdy
+above abo
+ever evr
+red red
+list lis
+though thg
+feel fel
+talk tak
+bird br
+soon son
+body by
+dog dg
+family fam
+direct dir
+pose pos
+leave lv
+song sng
+measure mea
+state stae
+product pro
+black bl
+short shr
+numeral num
+class cla
+wind win
+question q
+happen hap
+complete com
+ship shi
+area are
+half hal
+rock roc
+order ord
+fire fire
+south sou
+problem prb
+piece pc
+told tol
+knew kn
+pass pas
+farm frm
+top tp
+whole whol
+king kin
+size sz
+heard hrd
+best bes
+hour hour
+better bet
+true tru
+during du
+hundred hu
+remember rem
+step ste
+early earl
+hold hol
+west wes
+ground grn
+interest intr
+reach rch
+fast fas
+five fv
+sing sing
+listen list
+six sx
+table tab
+travel tra
+less les
+morning mrn
+ten ten
+simple sim
+several sv
+vowel vw
+toward towr
+war war
+lay ly
+against agi
+pattern pat
+slow slo
+center ce
+love lov
+person psn
+money mon
+serve ser
+appear apr
+road roa
+map mp
+science sci
+rule rul
+govern gv
+pull pul
+cold cld
+notice ntc
+voice voi
+fall fal
+power pw
+town ton
+fine fin
+certain cer
+fly fly
+unit uni
+lead ld
+cry cry
+dark drk
+machine mch
+note note
+wait wai
+plan plan
+figure fg
+star star
+box bx
+noun nou
+field fie
+correct crt
+able abl
+pound pou
+done done
+beauty bea
+drive drv
+stood std
+contain cont
+front fro
+teach tc
+week wek
+final fnl
+gave gve
+green gre
+quick qu
+develop del
+sleep slp
+warm wrm
+free fre
+minute min
+strong stro
+special spe
+mind mnd
+behind bh
+clear cle
+tail tai
+produce prd
+fact fac
+inch inc
+nothing noth
+course cou
+stay sty
+wheel whel
+full fu
+force frc
+blue blu
+object obj
+decide dc
+surface sur
+deep dp
+island isla
+yet yt
+busy bus
+record rcd
+boat boat
+common cmn
+gold gol
+possible psb
+plane plane
+age age
+wonder wnd
+laugh lau
+thousand thou
+ago ago
+ran ran
+check che
+game gm
+shape shp
+yes yes
+brought bro
+heat heat
+snow snw
+bed bed
+bring bri
+perhaps per
+weight wg
+language lng
+among amo
+</code></pre><h2 id="configuring-zmk">
+  Configuring ZMK
+  <a href="#configuring-zmk" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>Macros in ZMK have the following syntax:</p>
+<pre tabindex="0"><code>macros {
+  ZMK_MACRO(m_the,
+      wait-ms = &lt;0&gt;;
+      tap-ms = &lt;10&gt;;
+      bindings = &lt;&amp;kp T &amp;kp H &amp;kp E &amp;kp SPACE&gt;;
+  )
+}
+</code></pre><p>This types <code>t</code> <code>h</code> <code>e</code> <code>&lt;space&gt;</code></p>
+<p>To trigger it by a combo, you can use this syntax:</p>
+<pre tabindex="0"><code>combos {
+  compatible = &quot;zmk,combos&quot;;
+  combo_m_the {
+    timeout-ms = &lt;100&gt;;
+    key-positions = &lt;31 32 13&gt;;
+    bindings = &lt;&amp;m_the&gt;;
+  };
+}
+</code></pre><p>The key positions are dependant on your keyboard, and start with 0 at the top left and increment left to right 1, 2, 3 etc. This is not easy to read so I created some definitions to help which you can add to the top of your keymap:</p>
+<pre tabindex="0"><code>#define P_Q 0
+#define P_W 1
+#define P_F 2
+#define P_P 3
+#define P_B 4
+#define P_J 5
+#define P_L 6
+#define P_U 7
+#define P_Y 8
+#define P_SEMI 9
+#define P_A 10
+#define P_R 11
+#define P_S 12
+#define P_T 13
+#define P_G 14
+#define P_M 15
+#define P_N 16
+#define P_E 17
+#define P_I 18
+#define P_O 19
+#define P_Z 20
+#define P_X 21
+#define P_C 22
+#define P_D 23
+#define P_V 24
+#define P_K 25
+#define P_H 26
+#define P_COMA 27
+#define P_DOT 28
+#define P_SQT 29
+#define P_COMBO 31 32
+</code></pre><p>The <code>P_COMBO</code> keys are what I have used to differentiate a normal keypress and a chorded one. I experimented with using only letter keys in the combo, but I found I kept triggering combos when I didn&rsquo;t intend to. It requires a very small combo timeout which is easy to miss also. My combo keys are left thumb key (space) and right thumb key (shift). You could also have a single dedicated combo key if you have the room.</p>
+<p>I also created some variables for the timing settings:</p>
+<pre tabindex="0"><code>#define COMBO_TIMEOUT 200
+#define MACRO_TAP 10
+#define MACRO_WAIT 0
+</code></pre><p>There are a few other settings you will need to add to your *.conf file also to ensure you can press multiple keys at once and each key can have multiple combos:</p>
+<pre tabindex="0"><code>CONFIG_ZMK_HID_REPORT_TYPE_NKRO=y
+CONFIG_ZMK_COMBO_MAX_COMBOS_PER_KEY=512
+CONFIG_ZMK_COMBO_MAX_KEYS_PER_COMBO=10
+</code></pre><h2 id="importing-chords-into-your-keymap">
+  Importing Chords Into Your Keymap
+  <a href="#importing-chords-into-your-keymap" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>Managing your chords by editing the macros and combos manually is not very practical. The following script reads <code>chords.txt</code> and updates the keymap file. One challenge is knowing where to insert the macros/combos since the user may already have some manually created ones they want to keep. The script searches for a comment in the keymap to mark the start/end point to know where it is safe to update:</p>
+<pre tabindex="0"><code>macros {
+  // MACROS START
+  // MACROS END
+}
+combos {
+  compatible = &quot;zmk,combos&quot;;
+  // COMBOS START
+  // COMBOS END
+}
+</code></pre><p>This is the script that performs the import:</p>
+<p><code>import-chords.js</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">events</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;events&#39;</span>);
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fs</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;fs&#39;</span>);
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">readline</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;readline&#39;</span>);
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">translateKeys</span>(<span style="color:#a6e22e">x</span>) {
+  <span style="color:#66d9ef">switch</span>(<span style="color:#a6e22e">x</span>) {
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;&#39;&#34;</span><span style="color:#f92672">:</span>
+      <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;SQT&#39;</span>;
+      <span style="color:#66d9ef">break</span>;
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;`&#39;</span><span style="color:#f92672">:</span>
+      <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;BSPC&#39;</span>;
+      <span style="color:#66d9ef">break</span>;
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;_&#39;</span><span style="color:#f92672">:</span>
+      <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;SPC&#39;</span>;
+      <span style="color:#66d9ef">break</span>;
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;.&#39;</span><span style="color:#f92672">:</span>
+      <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;DOT&#39;</span>;
+      <span style="color:#66d9ef">break</span>;
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;@&#39;</span><span style="color:#f92672">:</span>
+      <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;AT&#39;</span>;
+      <span style="color:#66d9ef">break</span>;
+    <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">x</span>;
+  }
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">mapBindings</span>(<span style="color:#a6e22e">x</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">x</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/[A-Z]/</span>)) {
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">`&amp;sk LSHIFT &amp;kp </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">x</span>.<span style="color:#a6e22e">toUpperCase</span>()<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>
+  }
+
+  <span style="color:#66d9ef">return</span> <span style="color:#e6db74">`&amp;kp </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">translateKeys</span>(<span style="color:#a6e22e">x</span>).<span style="color:#a6e22e">toUpperCase</span>()<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>
+}
+
+(<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">processLineByLine</span>() {
+  <span style="color:#66d9ef">try</span> {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">keymap</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">argv</span>[<span style="color:#ae81ff">2</span>];
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">keymap</span>) {
+      <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">`Missing keymap filename, please pass as first argument`</span>);
+    }
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">existsSync</span>(<span style="color:#a6e22e">keymap</span>)) {
+      <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">`Unable to find keymap file </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">keymap</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+    }
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">rl</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">readline</span>.<span style="color:#a6e22e">createInterface</span>({
+      <span style="color:#a6e22e">input</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">createReadStream</span>(<span style="color:#e6db74">&#39;chords.txt&#39;</span>),
+      <span style="color:#a6e22e">crlfDelay</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">Infinity</span>
+    });
+
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">macros</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">combos</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">used</span> <span style="color:#f92672">=</span> {};
+
+    <span style="color:#a6e22e">rl</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;line&#39;</span>, (<span style="color:#a6e22e">line</span>) =&gt; {
+      <span style="color:#66d9ef">let</span> [<span style="color:#a6e22e">word</span>, <span style="color:#a6e22e">keys</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">line</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#39; &#39;</span>);
+      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">index</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">keys</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#39;&#39;</span>).<span style="color:#a6e22e">sort</span>().<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39;&#39;</span>);
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">used</span>[<span style="color:#a6e22e">index</span>]) {
+        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">`Can&#39;t use combo &#39;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">keys</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#39; for word &#39;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">word</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#39; already used by </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">used</span>[<span style="color:#a6e22e">index</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+      }
+      <span style="color:#a6e22e">used</span>[<span style="color:#a6e22e">index</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">word</span>;
+      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">macro</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;m_&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">word</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#39;&#39;</span>).<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">translateKeys</span>).<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39;&#39;</span>);
+      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">inputs</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">keys</span>.<span style="color:#a6e22e">toUpperCase</span>().<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#39;&#39;</span>).<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">translateKeys</span>);
+      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">bindings</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">word</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#39;&#39;</span>).<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">mapBindings</span>).<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39; &#39;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; &amp;kp SPACE&#39;</span>;
+      <span style="color:#a6e22e">macros</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`    ZMK_MACRO(</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">macro</span><span style="color:#e6db74">}</span><span style="color:#e6db74">,
+</span><span style="color:#e6db74">        wait-ms = &lt;MACRO_WAIT&gt;;
+</span><span style="color:#e6db74">        tap-ms = &lt;MACRO_TAP&gt;;
+</span><span style="color:#e6db74">        bindings = &lt;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">bindings</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&gt;;
+</span><span style="color:#e6db74">    )
+</span><span style="color:#e6db74">`</span>
+
+      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">positions</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;P_&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">inputs</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39; P_&#39;</span>);
+    <span style="color:#a6e22e">combos</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`    combo_</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">macro</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> {
+</span><span style="color:#e6db74">      timeout-ms = &lt;COMBO_TIMEOUT&gt;;
+</span><span style="color:#e6db74">      key-positions = &lt;P_COMBO </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">positions</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&gt;;
+</span><span style="color:#e6db74">      bindings = &lt;&amp;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">macro</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&gt;;
+</span><span style="color:#e6db74">    };
+</span><span style="color:#e6db74">`</span>
+    });
+
+    <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">events</span>.<span style="color:#a6e22e">once</span>(<span style="color:#a6e22e">rl</span>, <span style="color:#e6db74">&#39;close&#39;</span>);
+
+    <span style="color:#a6e22e">rl</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">readline</span>.<span style="color:#a6e22e">createInterface</span>({
+      <span style="color:#a6e22e">input</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">createReadStream</span>(<span style="color:#a6e22e">keymap</span>),
+      <span style="color:#a6e22e">crlfDelay</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">Infinity</span>
+    });
+
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">output</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">mode</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;normal&#39;</span>;
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">foundMacros</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">foundCombos</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+    <span style="color:#a6e22e">rl</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;line&#39;</span>, (<span style="color:#a6e22e">line</span>) =&gt; {
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">mode</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;normal&#39;</span>) {
+        <span style="color:#a6e22e">output</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">line</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">line</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#e6db74">&#39;MACROS START&#39;</span>)) {
+          <span style="color:#a6e22e">mode</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;macros&#39;</span>;
+        } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">line</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#e6db74">&#39;COMBOS START&#39;</span>)) {
+          <span style="color:#a6e22e">mode</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;combos&#39;</span>;
+        }
+      } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">mode</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;macros&#39;</span>) {
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">line</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#e6db74">&#39;MACROS END&#39;</span>)) {
+          <span style="color:#a6e22e">foundMacros</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+          <span style="color:#a6e22e">output</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">macros</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;\n&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">line</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
+          <span style="color:#a6e22e">mode</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;normal&#39;</span>;
+        }
+      } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">mode</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;combos&#39;</span>) {
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">line</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#e6db74">&#39;COMBOS END&#39;</span>)) {
+          <span style="color:#a6e22e">foundCombos</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+          <span style="color:#a6e22e">output</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">combos</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;\n&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">line</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
+          <span style="color:#a6e22e">mode</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;normal&#39;</span>;
+        }
+      }
+    });
+
+    <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">events</span>.<span style="color:#a6e22e">once</span>(<span style="color:#a6e22e">rl</span>, <span style="color:#e6db74">&#39;close&#39;</span>);
+
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">foundMacros</span>) {
+      <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">`Unable to find MACROS START/END, please add the comments to your keymap:
+</span><span style="color:#e6db74">        macros {
+</span><span style="color:#e6db74">          // MACROS START
+</span><span style="color:#e6db74">          // MACROS END
+</span><span style="color:#e6db74">        }
+</span><span style="color:#e6db74">      `</span>)
+    }
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">foundCombos</span>) {
+      <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">`Unable to find MACROS START/END, please add the comments to your keymap:
+</span><span style="color:#e6db74">        combos {
+</span><span style="color:#e6db74">          compatible = &#34;zmk,combos&#34;;
+</span><span style="color:#e6db74">          // COMBOS START
+</span><span style="color:#e6db74">          // COMBOS END
+</span><span style="color:#e6db74">        }
+</span><span style="color:#e6db74">      `</span>)
+    }
+    <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">writeFileSync</span>(<span style="color:#a6e22e">keymap</span>, <span style="color:#a6e22e">output</span>, { <span style="color:#a6e22e">encoding</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;utf8&#34;</span>, <span style="color:#a6e22e">flag</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;w&#34;</span>, <span style="color:#a6e22e">mode</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0o644</span> });
+  } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">err</span>) {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#a6e22e">err</span>);
+  }
+})();
+</code></pre></div><p>You can run the script using the following command, replace cradio.keymap with your keymap filename:</p>
+<pre tabindex="0"><code>node import-chords.js cradio.keymap
+</code></pre><p>The keymap should be updated in the following way:</p>
+<pre tabindex="0"><code>...
+  macros {
+    // MACROS START
+    ZMK_MACRO(m_the,
+        wait-ms = &lt;MACRO_WAIT&gt;;
+        tap-ms = &lt;MACRO_TAP&gt;;
+        bindings = &lt;&amp;kp T &amp;kp H &amp;kp E &amp;kp SPACE&gt;;
+    )
+    ZMK_MACRO(m_and,
+        wait-ms = &lt;MACRO_WAIT&gt;;
+        tap-ms = &lt;MACRO_TAP&gt;;
+        bindings = &lt;&amp;kp A &amp;kp N &amp;kp D &amp;kp SPACE&gt;;
+    )
+    ZMK_MACRO(m_you,
+        wait-ms = &lt;MACRO_WAIT&gt;;
+        tap-ms = &lt;MACRO_TAP&gt;;
+        bindings = &lt;&amp;kp Y &amp;kp O &amp;kp U &amp;kp SPACE&gt;;
+    )
+    ZMK_MACRO(m_that,
+        wait-ms = &lt;MACRO_WAIT&gt;;
+        tap-ms = &lt;MACRO_TAP&gt;;
+        bindings = &lt;&amp;kp T &amp;kp H &amp;kp A &amp;kp T &amp;kp SPACE&gt;;
+    )
+    ...
+    // MACROS END
+  };
+  combos {
+    compatible = &quot;zmk,combos&quot;;
+    // COMBOS START
+    combo_m_the {
+      timeout-ms = &lt;COMBO_TIMEOUT&gt;;
+      key-positions = &lt;P_COMBO P_T&gt;;
+      bindings = &lt;&amp;m_the&gt;;
+    };
+    combo_m_and {
+      timeout-ms = &lt;COMBO_TIMEOUT&gt;;
+      key-positions = &lt;P_COMBO P_A&gt;;
+      bindings = &lt;&amp;m_and&gt;;
+    };
+    combo_m_you {
+      timeout-ms = &lt;COMBO_TIMEOUT&gt;;
+      key-positions = &lt;P_COMBO P_Y&gt;;
+      bindings = &lt;&amp;m_you&gt;;
+    };
+    combo_m_that {
+      timeout-ms = &lt;COMBO_TIMEOUT&gt;;
+      key-positions = &lt;P_COMBO P_T P_H&gt;;
+      bindings = &lt;&amp;m_that&gt;;
+    };
+    // COMBOS END
+  };
+</code></pre><p>Flash your keyboard as usual and you should be able to start chording!</p>
+<p>I&rsquo;m also experimenting with some other convenience combos which can help you with adding suffixes and typing emails etc. I am currently using these mappings to translate the word to a key but the downside is it stops you from entering an actual backtick or underscore</p>
+<ul>
+<li><code>backtick</code> Backspace</li>
+<li><code>underscore</code> Space</li>
+</ul>
+<pre tabindex="0"><code>`. .
+`ing 'g
+``ing 'v
+`n't 'n
+`s 's
+`'s 'c
+myemail@gmail.com ze
+My_Name zn
+</code></pre><p>You can see my keymap file <a href="https://github.com/dlip/nixconfig/blob/master/keymaps/zmk/config/cradio.keymap">here</a></p>
+<h2 id="learning-process">
+  Learning Process
+  <a href="#learning-process" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>The amount of effort required may not be as high as Stenography, but it still requires some training to get the chords into your brain and muscle memory. My approach is to use the custom training mode in <a href="https://monkeytype.com/">monkeytype</a> with 10 words at a time. I practice one group until I achieve at least 70 WPM with 100% accuracy before moving on to the next 10. I also sometimes check the random option to ensure I&rsquo;m not just memorizing the words in order. Here is my training file:</p>
+<p><code>training.txt</code></p>
+<pre tabindex="0"><code>the and you that was for are with his they
+one have this from had hot but some what there
+can out other were all your when use word how
+said each she which their time will way about many
+then them would write like these her long make thing
+see him two has look more day could come did
+sound most number who over know water than call first
+people may down side been now find any new work
+part take get place made live where after back little
+only round man year came show every good give our
+under name very through just form much great think say
+help low line before turn cause same mean differ move
+right boy old too does tell sentence set three want
+air well also play small end put home read hand
+port large spell add even land here must big high
+such follow act why ask men change went light kind
+off need house picture try again animal point mother world
+near build self earth father head stand own page should
+country found answer school grow study still learn plant cover
+food sun four thought let keep eye never last door
+between city tree cross since hard start might story saw
+far draw left late run don't while press close night
+real life few stop open seem together next white children
+begin got walk example ease paper often always music those
+both mark book letter until mile river car feet care
+second group carry took rain eat room friend began idea
+fish mountain north once base hear horse cut sure watch
+color face wood main enough plain girl usual young ready
+above ever red list though feel talk bird soon body
+dog family direct pose leave song measure state product black
+short numeral class wind question happen complete ship area half
+rock order fire south problem piece told knew pass farm
+top whole king size heard best hour better TRUE during
+hundred remember step early hold west ground interest reach fast
+five sing listen six table travel less morning ten simple
+several vowel toward war lay against pattern slow center love
+person money serve appear road map science rule govern pull
+cold notice voice fall power town fine certain fly unit
+lead cry dark machine note wait plan figure star box
+noun field correct able pound done beauty drive stood contain
+front teach week final gave green quick develop sleep warm
+free minute strong special mind behind clear tail produce fact
+inch nothing course stay wheel full force blue object decide
+surface deep island yet busy record boat common gold possible
+plane age wonder laugh thousand ago ran check game shape
+yes brought heat snow bed bring perhaps weight language among
+
+</code></pre>
+    </div>
+    
+      
+    
+
+    
+      
+        
+
+      
+    
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >dlip</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span
+          >© 2022 Powered by
+          <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span
+        >
+        <span
+          >Theme created by
+          <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span
+        >
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

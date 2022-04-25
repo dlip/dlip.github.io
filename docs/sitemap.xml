@@ -2,11 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/</loc>
+    <lastmod>2022-04-25T14:54:26+10:00</lastmod>
+  </url><url>
+    <loc>/posts/hybrid-keyboard-chording-with-zmk/</loc>
+    <lastmod>2022-04-25T14:54:26+10:00</lastmod>
+  </url><url>
+    <loc>/posts/</loc>
+    <lastmod>2022-04-25T14:54:26+10:00</lastmod>
+  </url><url>
     <loc>/about/</loc>
   </url><url>
     <loc>/categories/</loc>
-  </url><url>
-    <loc>/</loc>
   </url><url>
     <loc>/tags/</loc>
   </url>

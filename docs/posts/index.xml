@@ -1,19 +1,38 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on My New Hugo Site</title>
-    <link>http://example.org/posts/</link>
-    <description>Recent content in Posts on My New Hugo Site</description>
+    <title>Posts on dlip</title>
+    
+    
+    
+    <link>/posts/</link>
+    <description>Recent content in Posts on dlip</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 20 Apr 2022 14:26:14 +1000</lastBuildDate><atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Apr 2022 14:54:26 +1000</lastBuildDate>
+    
+	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
-      <title>My First Post</title>
-      <link>http://example.org/posts/my-first-post/</link>
-      <pubDate>Wed, 20 Apr 2022 14:26:14 +1000</pubDate>
+      <title>Hybrid Keyboard Chording With ZMK</title>
+      <link>/posts/hybrid-keyboard-chording-with-zmk/</link>
+      <pubDate>Mon, 25 Apr 2022 14:54:26 +1000</pubDate>
       
-      <guid>http://example.org/posts/my-first-post/</guid>
-      <description></description>
+      <guid>/posts/hybrid-keyboard-chording-with-zmk/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Chording is the act of inputting text by pressing multiple keys at once, rather than typing sequentially as you normally would. There are chording approaches such as Stenography which court reporters often use in a similar way to shorthand to be able to input any word at the speed of speech, comfortably all day long.
+This is impressive, but also takes years of practice to become proficient. The hybrid approach uses the regular sequential typing method, but with the ability to chord words using abbreviations that we define at any point in the sentence.
+          
+        
+        </description>
     </item>
     
   </channel>

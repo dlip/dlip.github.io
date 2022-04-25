@@ -148,6 +148,7 @@ pre {
   padding: 20px;
   border-radius: 8px;
   font-size: .9rem;
+  max-height: 500px;
   overflow: auto;
 
   @media (--phone) {
