@@ -10,7 +10,7 @@ This is impressive, but also takes years of practice to become proficient. The h
 
 [ZMK](https://zmk.dev/) is an open source firmware which can run on many bluetooth mechanical keyboards. It has many features, including [combos](https://zmk.dev/docs/features/combos) which we can use for chording, and [macros](https://zmk.dev/docs/behaviors/macros) which allow you to define the keys to be pressed when you press the combo.
 
-You can see in action on my practicing chorded input video on [YouTube](https://youtu.be/WSWEC2Gn-5E)
+You can see me practicing chorded input on [YouTube](https://youtu.be/WSWEC2Gn-5E)
 
 ## Creating Chords
 
