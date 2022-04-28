@@ -30,7 +30,7 @@ paginate = 5
 [languages]
   [languages.en]
     title = "dlip"
-    subtitle = "A simple theme for Hugo"
+    subtitle = "Programming Blog"
     keywords = ""
     copyright = ""
     menuMore = "Show more"
